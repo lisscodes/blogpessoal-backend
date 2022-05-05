@@ -23,7 +23,6 @@ public class Tema {
 	@NotNull
 	private String descricao;
 	
-	
 	@OneToMany(mappedBy = "tema" , cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("tema")
 	private List<Postagem> postagem;
