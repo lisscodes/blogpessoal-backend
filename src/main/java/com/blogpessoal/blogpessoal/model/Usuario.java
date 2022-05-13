@@ -34,14 +34,34 @@ public class Usuario {
 	@Size(min=5, max=100)
 	private String senha;
 	
-	@NotBlank
+	private String foto;
+	
 	private String tipo;
 	
-	private String foto;
 	
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
+	
+	
+
+	public Usuario(Long id, String nome, String usuario, String senha, String foto, String tipo) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+		this.foto = foto;
+		this.tipo = tipo;
+	}
+	
+	
+
+	public Usuario() {
+		super();
+	}
+
+
 
 	public String getFoto() {
 		return foto;
